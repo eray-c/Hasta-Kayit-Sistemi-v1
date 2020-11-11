@@ -2,46 +2,49 @@
 #include <stdlib.h>
 #include "hastane.h"
 
-void menu();
+void menuYazdir();
 
 int main(int argc, char** argv) {
-    printf("------------------------------\n");
-    printf("HASTA KAYIT SISTEMI\n");
-    printf("------------------------------\n");
+    printf("-----------------------------\n");
+    printf("-----[HASTA KAYIT SISTEMI]-----\n");
+    printf("-----------------------------\n");
+    printf("\n\n\n");
     
-    int secim;
+    char secim;
     while(1) {
-        menu();
-        scanf("%d", &secim);
-        switch(secim) {
-            case 0:
-                printf("Cikis yapiliyor...\n");
-                exit(0);
-                break;
-            case 1:
-                hastaKayit();
-                break;
-            case 2:
-                kayitSil();
-                break;
-            case 3:
-                hastaListele();
-                break;
-            default:
-                printf("Girdiginiz deger gecersiz! Tekrar deneyin!\n");
-                break;
-        }
-    }
+    menuYazdir();
+    scanf("%c",&secim);
     
+    switch(secim) {
+        case '1':
+            hastaKayit();
+            break;
+        case '2':
+            hastaSil();
+            break;
+        case '3':
+            hastaGuncelle();
+            break;
+        case '4':
+            hastaSorgu();
+            break;
+        case '0':
+            printf("Cikis Yapiliyor...\n");
+            exit(0);
+          default:
+            printf("\nLutfen Gecerli Bir Islem Seciniz...\n");
+            break;
+        
+    }
+  }
     return (EXIT_SUCCESS);
 }
-void menu() {
-    printf("\nYAPMAK ISTEDIGINIZ ISLEMI SECINIZ\n");
+void menuYazdir() {
+    printf("\n------[ANA MENU]-------\n");
     printf("1. Hasta Kayit\n");
-    printf("2. Kayit Sil\n");
-    printf("3. Hastalari Listele\n");
+    printf("2. Hasta Silme\n");
+    printf("3. Hasta Guncelleme\n");
+    printf("4. Hasta Sorgulama\n");
     printf("0. Cikis\n");
-    printf("Seciminizi Giriniz : ");
-    
+    printf("\nYapmak Istediginiz Islemi Seciniz :");
 }
-
