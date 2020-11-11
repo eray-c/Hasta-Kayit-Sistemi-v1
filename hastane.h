@@ -1,31 +1,15 @@
 #ifndef HASTANE_H
 #define HASTANE_H
 
-#define UZUNLUK 20
-#define AD_UZUNLUK 50
+#define AD 50
+#define MAX_HASTA 20
 
-
-typedef struct doktor {
-    char doktorAdi[AD_UZUNLUK];
-    char doktorSoyadi[AD_UZUNLUK];
-}Doktor;
-
-typedef struct hasta {
-    char ad[AD_UZUNLUK];
-    char soyad[AD_UZUNLUK];
-    char tc[AD_UZUNLUK];
-    char tarih[AD_UZUNLUK];
-    Doktor doktor;
-}Hasta;
-
-extern Hasta hastaListesi[];
-extern int hastaSayisi;
-
+extern char doktor1[];
+extern char doktor2[];
 
 void hastaKayit();
-void kayitSil();
-void hastaListele();
-void doktorDurum();
+void hastaSil();
+void hastaGuncelle();
+void hastaSorgu();
 
 #endif /* HASTANE_H */
-
